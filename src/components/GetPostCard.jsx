@@ -20,6 +20,7 @@ export default function GetPostCard() {
                 className="border-2 border-black bg-blue-400 p-1 rounded-lg text-white"
                 onClick={()=>getData()} >
                     Click me to get Post data</button>
+                     // fetches data only once when component mounts
             <div className="p-2">
                 {postData}
             </div>

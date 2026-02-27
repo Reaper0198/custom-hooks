@@ -1,3 +1,5 @@
+// this is a basix useFetch hook which fetches data on component mounting.
+
 import { useEffect, useState } from "react";
 
 export default function useFetch(url) {
@@ -10,7 +12,7 @@ export default function useFetch(url) {
         setPostData(data);
     }
 
-    useEffect(() => {getPostData()}, [url]);
+    useEffect(() => {getPostData()}, []);
 
     return postData;
 
