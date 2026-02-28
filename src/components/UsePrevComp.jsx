@@ -9,10 +9,13 @@ export default function UsePrevComp() {
 
 
     return (
-        <div className="flex-col border-2 p-2 m-4">
-            <button className="border-2 rounded-lg p-1 bg-purple-400 text-white" 
-                onClick={()=>increseValue()}>Click me to increase</button>
+        <div className="flex flex-col gap-2 border-2 p-2 m-4 rounded-lg">
+            <div>
 
+            <button className="w-fit border-black border-2 rounded-lg p-1 bg-purple-400 text-white" 
+                onClick={()=>increseValue()}>Click me to increase</button>
+             // uses useIncrese and usePrev hook
+                </div>
             <div className="flex gap-2">
                 <div className="border-2 p-1"><p>cur value : {value}</p></div>
                 <div className="border-2 p-1"><p>prev value : {previousValue}</p></div>
