@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import useFetch2 from "../hooks/useFetch2";
 
 export default function PollingGetPostCard() {
@@ -7,9 +7,8 @@ export default function PollingGetPostCard() {
 
     const {loading, postData, error} = useFetch2(url, 5);
 
-    console.log('loading', loading)
-    console.log('postData', postData)
-    console.log('error', error)
+    const [post, setPost] = useState(null);
+
 
     const getPost = (postId) =>{
         setUrl(`https://jsonplaceholder.typicode.com/posts/${postId}`);
@@ -24,11 +23,12 @@ export default function PollingGetPostCard() {
                     onClick={()=>getPost(2)}>click me fetch post 2</button>
                 <button className="p-1 border-2 border-black rounded-lg bg-green-300 text-white" 
                     onClick={()=>getPost(3)}>click me fetch post 3</button>
+                    // fetches data every user-defined seconds, gives flag for loading, error.
             </div>
             <div>
-                {loading && <p>Loading...</p>}
-                {error && <p>Some error occured...</p>}
                 {postData && <p>{JSON.stringify(postData)}</p>}
+                {loading && <p>Loading latest data</p>}
+                {error && <p>Error occured. Could not fetch updated data.</p>}
             </div>
 
         </div>

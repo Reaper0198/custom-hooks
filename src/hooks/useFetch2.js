@@ -22,7 +22,6 @@ export default function useFetch2(url, polTime) {
         }catch(e){
             setError(true);
             setLoading(false);
-            setPostData(null);
         }
 
     }
