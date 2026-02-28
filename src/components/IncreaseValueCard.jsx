@@ -2,7 +2,7 @@ import useIncrease from "../hooks/UseIcrease"
 
 export default function IncreaseValueCard() {
 
-    const [value, increaseValue] = useIncrease(0);
+    const [value, increaseValue] = useIncrease(0, 2);
 
     return (
         <div className="flex p-2 gap-2 rounded-lg border-2 m-4">
@@ -15,6 +15,7 @@ export default function IncreaseValueCard() {
                     increase value
                 </p>
             </button>
+            // custom hook that increases the value by custom interval;
         </div>
     )
 }

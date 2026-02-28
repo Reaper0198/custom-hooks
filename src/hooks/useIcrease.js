@@ -1,10 +1,10 @@
 import { useState } from "react";
 
-export default function useIncrease(num) {
+export default function useIncrease(num, increaseBy) {
     const [value, setValue] = useState(num);
 
     const increaseValue = () => {
-        setValue(prev => prev+1);
+        setValue(prev => (prev+increaseBy));
     }
 
     return [value, increaseValue];
