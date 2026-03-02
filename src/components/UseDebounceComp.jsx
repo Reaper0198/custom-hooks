@@ -3,7 +3,7 @@ import useDebounce from "../hooks/useDebounce";
 
 export default function UseDebounceComp() {
 
-    const {searchQuery, setSearchQuery} = useDebounce();
+    const {searchQuery, setSearchQuery} = useDebounce(800);
 
     function handleInput(e){
         setSearchQuery(e.target.value);
