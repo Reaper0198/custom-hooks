@@ -1,3 +1,4 @@
+import { useState } from "react";
 import useIncrease from "../hooks/UseIcrease"
 import usePrev from "../hooks/usePrev";
 
@@ -7,6 +8,9 @@ export default function UsePrevComp() {
 
     const previousValue = usePrev(value);
 
+    const [state, setState] = useState("");
+
+
 
     return (
         <div className="flex flex-col gap-2 border-2 p-2 m-4 rounded-lg">
@@ -14,6 +18,8 @@ export default function UsePrevComp() {
 
             <button className="w-fit border-black border-2 rounded-lg p-1 bg-purple-400 text-white" 
                 onClick={()=>increseValue()}>Click me to increase</button>
+            <button className="w-fit border-black border-2 rounded-lg p-1 bg-purple-400 text-white" 
+                onClick={()=>setState(prev => prev+"a")}>Click me to see magic</button>
              // uses useIncrese and usePrev hook
                 </div>
             <div className="flex gap-2">
