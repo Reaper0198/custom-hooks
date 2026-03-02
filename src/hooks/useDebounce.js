@@ -1,6 +1,6 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
-export default function useDobounce(searchQuery) {
+export default function useDebounce() {
 
     const [searchQuery, setSearchQuery] = useState("");
 
@@ -11,7 +11,7 @@ export default function useDobounce(searchQuery) {
 
     useEffect(()=>{
         console.log('new character added');
-        const timeoutId = setTimeout(()=> func(searchQuery), 400);
+        const timeoutId = setTimeout(()=> func(searchQuery), 2000);
 
         return ()=>{
             console.log("clock reset");
