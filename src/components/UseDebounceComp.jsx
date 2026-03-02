@@ -14,9 +14,12 @@ export default function UseDebounceComp() {
     }
 
     return (
-        <div className="flex border-2 rounded-lg m-4 p-2">
-            <input type="text" value={searchQuery} onChange={handleInput}/>
-            <button onClick={handleSearch}>Search</button>
+        <div className="flex gap-2 border-2 rounded-lg m-4 p-2">
+            <input className="border-2 rounded-lg p-1 border-black"
+                type="text" value={searchQuery} onChange={handleInput}/>
+            <button className="p-1 rounded-lg border-2 bg-yellow-600 text-white border-black"
+                onClick={handleSearch}>Search</button>
+            // search uses useDebounce hook to optimise search operation
         </div>
     )
 }
