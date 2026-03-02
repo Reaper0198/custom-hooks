@@ -1,6 +1,11 @@
+import { useState } from "react";
+
 export default function useDobounce(searchQuery) {
 
-    function func(){
+    const [searchQuery, setSearchQuery] = useState("");
+
+    function func(query){
+
         console.log("final string", searchQuery)
     }
 
@@ -13,4 +18,6 @@ export default function useDobounce(searchQuery) {
             clearTimeout(timeoutId);
         }
     }, [searchQuery])
+
+    return {searchQuery, setSearchQuery};
 }
